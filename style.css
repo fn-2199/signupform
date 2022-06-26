@@ -237,6 +237,12 @@ button:hover {
         width: 100%;
     }
 
+    .logo,
+    .left-side,
+    .right-side {
+        border-radius: 0 0 0 0;
+    }
+
   }
 
   /* Mobile Version */
