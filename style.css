@@ -22,6 +22,7 @@ a {
 :root {
     --main-font: 'Viga', sans-serif;
     --main-color: white;
+    --secondary-color: grey;
     --highlight-color: #db2539;
     --highlight-shadow: #db2539 2px 0 10px;
     --neon-color: #3572a8;
@@ -93,6 +94,7 @@ h1 {
 form {
     display: flex;
     flex-flow: row wrap;
+    padding: 25px 0;
 }
 
 form div {
@@ -107,7 +109,7 @@ input {
     background-color: inherit;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed var(--secondary-color);
     text-transform: uppercase;
 }
 
@@ -122,6 +124,14 @@ input {
 input:focus {
     border-bottom: 1px solid var(--highlight-color);
     outline: none;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+.bottom p {
+    color: var(--secondary-color);
 }
 
 /* SUBMIT BUTTON */
@@ -178,5 +188,80 @@ button:hover {
         0 0 55px var(--neon-color),
         0 0 70px var(--neon-color),
         0 0 80px var(--neon-color);
+    }
+  }
+
+  /* Smaller Screen Version */
+  @media only screen and (max-width: 1150px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .neon-sign {
+        position: static;
+    }
+
+    .left-side {
+        background-size: 100% auto;
+        display: block;
+        border-radius: 15px 15px 0 0; 
+    }
+
+    .right-side {
+        border-radius:  0 0 15px 15px;
+    }
+
+    .logo {
+        border-radius: 15px 15px 0 0; 
+        margin: 0;
+        height: 100%;
+    }
+
+    .top {
+        font-size: 1.5rem;
+    }
+  }
+
+  /* Mobile Version */
+  @media only screen and (max-width: 600px) {
+
+    body {
+        background: black;
+    }
+    
+    .container {
+        height: 100%;
+        background-color: black;
+    }
+
+    .left-side {
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        height: auto;
+    }
+
+    .logo,
+    .left-side,
+    .right-side {
+        border-radius: 0 0 0 0;
+    }
+
+    .neon-sign {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    form div {
+        width: 100%;
     }
   }
