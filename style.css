@@ -223,8 +223,24 @@ button:hover {
     }
   }
 
-  /* Mobile Version */
   @media only screen and (max-width: 600px) {
+
+    .container {
+        height: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    form div {
+        width: 100%;
+    }
+
+  }
+
+  /* Mobile Version */
+  /* @media only screen and (max-width: 600px) {
 
     body {
         background: black;
@@ -264,4 +280,4 @@ button:hover {
     form div {
         width: 100%;
     }
-  }
+  } */
