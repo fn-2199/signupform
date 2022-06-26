@@ -1,9 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Viga&display=swap');
+
+@font-face {
+    font-family: 'cyberway-riders';
+    src: url('./fonts/cyberwayriders-lg97d-webfont.woff2') format('woff2'),
+         url('./fonts/cyberwayriders-lg97d-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Remove default styling */
 body, 
 h1,
-p {
+p,
+a {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
+
+/* Define "global" css variables */
+:root {
+    --main-font: 'Viga', sans-serif;
+    --main-color: white;
+    --highlight-color: #db2539;
+    --highlight-shadow: #db2539 2px 0 10px;
+    --neon-color: #3572a8;
+}
+
+/* BODY AND CONTAINER */
 
 body {
     display: flex;
@@ -13,22 +37,18 @@ body {
     background: url(./img/background.jpg) no-repeat fixed center;
     background-size: cover;
     backdrop-filter: blur(1.5px);
+    font-family: var(--main-font);
+    color: var(--main-color);
 }
 
 .container {
     height: 700px;
     width: 1200px;
     display: flex;
+    position: relative;
 }
 
-.right-side {
-    flex: 1.5 0 0;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-}
+/* CONTAINER: LEFT COLUMN */
 
 .left-side {
     flex: 1 0 0;
@@ -41,16 +61,6 @@ body {
     justify-content: flex-end;
 }
 
-/* img {
-    flex: 1 0 0;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    height: 700px;
-    width: 50px;
-    object-fit: cover;
-    object-position: 35%;
-} */
-
 .logo {
     background-color: rgb(0, 0, 0, 0.4);
     padding: 15px;
@@ -59,8 +69,114 @@ body {
 }
 
 h1 {
-    color: white;
+    font-family: 'cyberway-riders', var(--main-font);
+    font-size: 3rem;
 }
 
+/* CONTAINER: RIGHT COLUMN */
 
+.right-side {
+    flex: 1.5 0 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
 
+.top {
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+input {
+    width: 80%;
+    font-family: inherit;
+    background-color: inherit;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px dashed grey;
+    text-transform: uppercase;
+}
+
+em,
+a,
+input {
+    color: var(--highlight-color);
+    text-shadow: var(--highlight-shadow);
+
+}
+
+input:focus {
+    border-bottom: 1px solid var(--highlight-color);
+    outline: none;
+}
+
+/* SUBMIT BUTTON */
+
+button {
+    font-family: inherit;
+    font-size: 1.5rem;
+    background-color: inherit;
+    color: inherit;
+    border: 2px solid var(--main-color);
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: var(--main-color);
+    color: black;
+    cursor: pointer;
+}
+
+/* NEON SIGN */
+
+.neon-sign {
+    position: absolute;
+    right: 20px;
+    bottom: -50px;
+    font-size: 6rem;
+    color: var(--main-color);
+    animation: pulsate 2.5s infinite alternate;  
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+@keyframes pulsate {
+    100% {
+      /* Larger blur radius */
+      text-shadow:
+        0 0 4px var(--main-color),
+        0 0 11px var(--main-color),
+        0 0 19px var(--main-color),
+        0 0 40px var(--neon-color),
+        0 0 80px var(--neon-color),
+        0 0 90px var(--neon-color),
+        0 0 100px var(--neon-color),
+        0 0 150px var(--neon-color);
+    }
+    0% {
+      /* Smaller blur radius */
+      text-shadow:
+        0 0 2px var(--main-color),
+        0 0 4px var(--main-color),
+        0 0 6px var(--main-color),
+        0 0 10px var(--neon-color),
+        0 0 45px var(--neon-color),
+        0 0 55px var(--neon-color),
+        0 0 70px var(--neon-color),
+        0 0 80px var(--neon-color);
+    }
+  }
