@@ -20,6 +20,7 @@ a {
 
 /* Define "global" css variables */
 :root {
+    --background-color: black;
     --main-font: 'Viga', sans-serif;
     --main-color: white;
     --secondary-color: grey;
@@ -80,7 +81,7 @@ h1 {
     flex: 1.5 0 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: black;
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -132,6 +133,10 @@ a:hover {
 
 .bottom p {
     color: var(--secondary-color);
+}
+
+abbr {
+    color: var(--background-color);
 }
 
 /* SUBMIT BUTTON */

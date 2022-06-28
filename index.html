@@ -25,33 +25,50 @@
 
             <form action="#" method="post" id="form">
                 <div>
-                    <label for="fName">FIRST NAME</label>
+                    <label for="fName">
+                        <span>FIRST NAME</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
                     <input type="text"id="fName" name="fName" required>
                 </div>
 
                 <div>
-                    <label for="lName">LAST NAME</label>
+                    <label for="lName">
+                        <span>LAST NAME</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
                     <input type="text"id="lName" name="lName" required>
                 </div>
 
                 <div>
-                    <label for="email">EMAIL</label>
+                    <label for="email">
+                        <span>EMAIL</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
                     <input type="email" name="email" id="email" required>
                 </div>
 
                 <div>
-                    <label for="phone">PHONE</label>
-                    <input type="tel" name="phone" id="phone">
+                    <label for="phone">
+                        <span>PHONE</span>
+                    </label>
+                    <input type="tel" name="phone" id="phone" pattern="/^[\d ()+-]+$/" title="Valid characters: digits, parenthesis, minus and plus signs.">
                 </div>
 
                 <div>
-                    <label for="password">PASSWORD</label>
-                    <input type="password" name="password" id="password" required>
+                    <label for="password">
+                        <span>PASSWORD</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="password" name="password" id="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" required>
                 </div>
 
                 <div>
-                    <label for="password2">CONFIRM PASSWORD</label>
-                    <input type="password" name="password2" id="password2" required>
+                    <label for="password2">
+                        <span>CONFIRM PASSWORD</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="password" name="password2" id="password2" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
                 </div>
             </form>
 
